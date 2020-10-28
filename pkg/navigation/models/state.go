@@ -1,4 +1,4 @@
-package navigator
+package models
 
 // State represents the current state of the game.
 type State struct {

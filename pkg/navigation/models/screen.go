@@ -1,4 +1,4 @@
-package navigator
+package models
 
 // Screen ...
 type Screen interface {

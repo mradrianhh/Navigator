@@ -1,24 +1,24 @@
-package navigator
+package models
 
 import (
 	"errors"
 )
 
-// Stack ..
-type Stack []Screen
+// NavigationStack ..
+type NavigationStack []Screen
 
 // IsEmpty checks if the stack is empty.
-func (s *Stack) IsEmpty() bool {
+func (s *NavigationStack) IsEmpty() bool {
 	return len(*s) == 0
 }
 
 // Push a new value onto the stack.
-func (s *Stack) Push(screen Screen) {
+func (s *NavigationStack) Push(screen Screen) {
 	*s = append(*s, screen)
 }
 
 // Pop removes and returns the top element of the stack.
-func (s *Stack) Pop() (Screen, error) {
+func (s *NavigationStack) Pop() (Screen, error) {
 	if s.IsEmpty() {
 		return Empty{}, errors.New("stack is empty")
 	}
@@ -30,7 +30,7 @@ func (s *Stack) Pop() (Screen, error) {
 }
 
 // Peek returns the top element of the stack without removing it.
-func (s *Stack) Peek() (Screen, error) {
+func (s *NavigationStack) Peek() (Screen, error) {
 	if s.IsEmpty() {
 		return Empty{}, errors.New("stack is empty")
 	}
@@ -41,6 +41,6 @@ func (s *Stack) Peek() (Screen, error) {
 }
 
 // Len returns the length of the stack.
-func (s *Stack) Len() int {
+func (s *NavigationStack) Len() int {
 	return len(*s)
 }
